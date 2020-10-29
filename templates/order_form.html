@@ -1,0 +1,206 @@
+{% extends "index.html" %}
+{% block formTemp %}
+
+<section id="top" style="margin-top:80px; " class="container-fluid mt-8">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+  <a href="#section1" class="btn btn-dark" data-toggle="collapse">Create <i class="fa fa-plus"></i>
+  </a>
+  </div>
+  <!-- Order Details -->
+  <form class="form-horizontal col-md-3 col-lg-3" method="POST" action="{{url_for('searchordermanagementByorderid')}}">
+    <div class="row">
+  <div class="form-group col-lg-8 col-md-8">
+  <input type="text" class="form-control" id="searchbyorderid" placeholder="Order ID" name="searchbyorderid">
+  </div>
+  <div class="form-group col-lg-4 col-md-4">
+  <button type="submit" class="btn btn-dark">Search</button>
+</div>
+</div>
+</form>
+  
+</div>
+</section>
+
+
+
+  <!-- Content Section -->
+  <section id="section1" class=" collapse container-fluid">
+      <div class="row bg bg-lighta">
+          <div class="sec_title">
+              <h6>Order Management</h6>
+          </div>
+<!-- Search -->
+          <form class="form-horizontal col-xs-12 col-lg-12 col-md-12 col-sm-12 mt-2" method="POST" action="{{url_for('save_data_to_ordermanagement')}}"name="wform" >
+              <fieldset  class="row sec1">
+                  <legend class="ml-3">Order Information</legend>
+
+                    <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                      <!-- <label for="dcnum" class="" ></label> -->
+
+                           <input type="text" class="form-control mb-1" id="orderid" placeholder=" Order ID" name="orderid" required>
+                    </div>
+                 
+              </fieldset>
+
+          <!-- RETAILER -->
+              <fieldset  class="row sec1">
+                   <legend  class="ml-3">Retailer Information</legend>
+                   <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">ID</label>
+                   <input type="text" class="form-control mb-1" id="retailerid" placeholder="ID"  name="retailerid" required>
+                  </div>  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">Name</label>
+                   <input type="text" class="form-control mb-1" id="retailername" placeholder="e.g.John Hawks"  name="retailername" required>
+                  </div>
+                  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="email" class="">Email</label>
+                    <input type="email" class="form-control mb-1" id="retaileremail_id" placeholder="e.g.johnS@gmail.com"  name="retaileremail_id" required>
+                  </div> 
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="phone" class="">Mobile Number</label>
+                     <input type="tel" class="form-control mb-1" id="retailerphone_num" placeholder="e.g.999-888-7676 "  name="retailerphone_num" required>
+                  </div> 
+              </fieldset>
+
+              <!-- INSTALLER -->
+              <fieldset  class="row sec1">
+                   <legend  class="ml-3">Installer Information</legend>  
+                   <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">ID</label>
+                   <input type="text" class="form-control mb-1" id="installerid" placeholder="ID"  name="installerid" required>
+                  </div>  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">Name</label>
+                   <input type="text" class="form-control mb-1" id="installername" placeholder="e.g.John Hawks"  name="installername" required>
+                  </div>
+                  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="email" class="">Email</label>
+                    <input type="email" class="form-control mb-1" id="installeremail_id" placeholder="e.g.johnS@gmail.com"  name="installeremail_id" required>
+                  </div> 
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="phone" class="">Mobile Number</label>
+                     <input type="tel" class="form-control mb-1" id="installerphone_num" placeholder="e.g.999-888-7676 "  name="installerphone_num" required>
+                  </div> 
+              </fieldset>
+              <!-- DOORCENTER -->
+              <fieldset  class="row sec1">
+                   <legend  class="ml-3">Doorcenter Information</legend>  
+                   <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">ID</label>
+                   <input type="text" class="form-control mb-1" id="dcbasicinfoid" placeholder="ID"  name="dcbasicinfoid" required>                 
+                 </div>  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">Name</label>
+                   <input type="text" class="form-control mb-1" id="dcbasicinfoname" placeholder="e.g.John Hawks"  name="dcbasicinfoname" required>
+                  </div>
+                  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="email" class="">Email</label>
+                    <input type="email" class="form-control mb-1" id="dcbasicinfoemail_id" placeholder="e.g.johnS@gmail.com"  name="dcbasicinfoemail_id" required>
+                  </div> 
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="phone" class="">Mobile Number</label>
+                     <input type="tel" class="form-control mb-1" id="dcbasicinfophone_num" placeholder="e.g.999-888-7676 "  name="dcbasicinfophone_num" required>
+                  </div> 
+              </fieldset>
+              <!-- Consumer -->
+              <fieldset  class="row sec1">
+                   <legend  class="ml-3">Consumer Information</legend>  
+                   <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">ID</label>
+                   <input type="text" class="form-control mb-1" id="consumerid" placeholder="ID"  name="consumerid" required>
+                  </div>  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="fName" class="">Name</label>
+                   <input type="text" class="form-control mb-1" id="consumername" placeholder="e.g.John Hawks"  name="consumername" required>
+                  </div>
+                  
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="email" class="">Email</label>
+                    <input type="email" class="form-control mb-1" id="consumeremail_id" placeholder="e.g.johnS@gmail.com"  name="consumeremail_id" required>
+                  </div> 
+                  <div class="form-group col-lg-4 col-sm-12">
+                    <label for="phone" class="">Mobile Number</label>
+                     <input type="tel" class="form-control mb-1" id="consumerphone_num" placeholder="e.g.999-888-7676 "  name="consumerphone_num" required>
+                  </div> 
+              </fieldset>
+              <div class="form-group col-lg-12 text-center m-4">
+                <button type="Submit" class="btn btn-primary">Submit</button>
+              </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+           <section id="section2" class="container-fluid">
+            <div class="bg bg-lighta">
+                  <div class="row">
+                      <div class="sec_title">
+                      <h6 id="select_txt">View Fetched Data</h6>
+                  </div>
+            </div>
+            <div class="row mt-4 pl-4 pr-4">
+
+            {% for d in odermanagementlist %}
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">             
+                <div class="card">
+                    <div class="card-body">
+                       <h5 class="card-title bg bg-dark text-light p-1">ORDER ID : {{d["orderId"]}}</h5>
+                       <table class="mb-4" id="select_txt1">
+                          <tr style="display: none;"><td>ID : </td><td>{{d["_id"]}}</td></tr>
+                          <tr><td>RETAILER ID : </td><td>{{d["retailer_Id"]}}</td></tr>
+                          <tr><td>RETAILER NAME : </td><td>{{d["retailer_Name"]}}</td></tr>
+                          <tr><td>RETAILER EMAIL-ID : </td><td>{{d["retailer_Email_Id"]}}</td></tr>
+                          <tr><td>RETAILER PHONE-NUMBER : </td><td>{{d["retailer_phone_number"]}}</td></tr>
+
+                          <tr><td>INSTALLER ID : </td><td>{{d["installer_Id"]}}</td></tr>
+                          <tr><td>INSTALLER NAME : </td><td>{{d["installer_Name"]}}</td></tr>
+                          <tr><td>INSTALLER EMAIL-ID : </td><td>{{d["installer_Email_Id"]}}</td></tr>
+                          <tr><td>INSTALLER PHONE-NUMBER : </td><td>{{d["installer_phone_number"]}}</td></tr>
+
+                          <tr><td>DOORCENTER ID : </td><td>{{d["dcbasicinfo_Id"]}}</td></tr>
+                          <tr><td>DOORCENTER NAME : </td><td>{{d["dcbasicinfo_Name"]}}</td></tr>
+                          <tr><td>DOORCENTER EMAIL-ID : </td><td>{{d["dcbasicinfo_Email_Id"]}}</td></tr>
+                          <tr><td>DOORCENTER PHONE-NUMBER  : </td><td>{{d["dcbasicinfo_phone_number"]}}</td></tr>
+
+                          <tr><td>CONSUMER ID : </td><td>{{d["consumer_Id"]}}</td></tr>
+                          <tr><td>CONSUMER NAME : </td><td>{{d["consumer_Name"]}}</td></tr>
+                          <tr><td>CONSUMER EMAIL-ID : </td><td>{{d["consumer_Email_Id"]}}</td></tr>
+                          <tr><td>CONSUMER PHONE-NUMBER : </td><td>{{d["consumer_phone_number"]}}</td></tr>
+                          
+                       </table>
+                    </div>
+                    <div class="card-footer">
+                        <form method="POST" action="edit/{{d['_id']}}" >
+                             <div class="form-group ">
+                              <button type="submit" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button> 
+                              </div>
+                        </form>                          
+                    </div>
+                </div>
+            </div>  
+      
+            {% endfor %}
+   
+             </div>
+             <div class="row text-center">                    
+                <div class="col-lg-4 text-center">
+                    <div id="pagination" class="m-3">
+                        <ul class="pagination pagination-sm">
+                            <li class="page-item"><a class="btn btn-outline-dark btn-sm mr-1" href="#">Previous</a></li>
+                            <li class="page-item"><a class="btn btn-dark mr-1 btn-sm" href="#">1</a></li>
+                            <li class="page-item"><a class="btn btn-dark mr-1 btn-sm" href="#">2</a></li>
+                            <li class="page-item"><a class="btn btn-dark mr-1 btn-sm" href="#">3</a></li>
+                            <li class="page-item"><a class="btn btn-outline-dark btn-sm mr-1" href="#">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+{% endblock %}
+   
+     
